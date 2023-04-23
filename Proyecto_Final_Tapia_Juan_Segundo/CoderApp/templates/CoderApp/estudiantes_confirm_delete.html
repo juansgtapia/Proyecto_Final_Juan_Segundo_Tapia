@@ -1,0 +1,25 @@
+{% extends "CoderApp/main.html" %}
+
+{% block title %}
+Portal de cursos 
+{% endblock %}
+
+{% block content %}
+    <body style="color: beige;">En este sitio podrás eliminar estudiantes de la base de datos</body>
+    <h2 style="color: white;"> Eliminar estudiante </h2>
+
+    <form method= "post" style="color: white;" >{% csrf_token %} 
+        ¿Estás seguro de que deseas eliminar el estudiante <i style="color: wheat;">{{ estudiante.nombre }} {{ estudiante.apellido}}?</i>
+        <p>
+            <input type = "submit" value = "Eliminar" />
+        </p>
+    </form>
+
+    <p>
+        <button style="color:black">
+            <a style="color: black;" href = "{% url 'List' %}">Regresar</a>
+        </button>
+    </p>
+{% endblock %}
+
+{% block x %} Portal de cursos {% endblock %}

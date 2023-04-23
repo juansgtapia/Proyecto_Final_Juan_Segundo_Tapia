@@ -1,0 +1,38 @@
+{% extends "CoderApp/main.html" %}
+
+{% block title %}
+Portal de estudiantes 
+{% endblock %}
+
+{% block content %}
+
+<body style="color:white"> Acá encontraras información sobre nuestros alumnos</body>
+
+    <h3> Lista de alumnos </h3>
+    <ul>
+        {% for estudiante in object_list %}
+            <li>
+                <p>Nombre: <i style="color: wheat;"> {{ estudiante.nombre }} </i></p>
+                <p>Email: <i style="color:wheat;"> {{ estudiante.email}} </i></p>
+                <p>
+                    <a style="color:khaki" href = "{% url 'Detail' estudiante.id %}">Ver</a>
+                    <a style="color:khaki" href = "{% url 'Edit' estudiante.id %}">Editar</a>
+                    <a style="color:khaki" href = "{% url 'Delete' estudiante.id %}">Borrar</a>
+                </p>
+            </li>
+
+        {% endfor %}
+
+
+    </ul>
+    <p>
+        <button style="color: black;">
+            <a style="color:black;" href = "{% url 'estudiantes' %}">Añadir estudiantes</a>
+        </button>
+    </p>
+
+
+
+{% endblock %}
+
+{% block x %} Portal de estudiantes {% endblock %}

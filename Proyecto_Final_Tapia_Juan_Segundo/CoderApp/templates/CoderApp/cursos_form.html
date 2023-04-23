@@ -1,0 +1,23 @@
+{% extends "CoderApp/main.html" %}
+
+{% block title %}
+Portal de cursos 
+{% endblock %}
+
+{% block content %}
+    <h2 style="color: white;"> Editar información del curso </h2>
+    <form method="post" style="color: white;" >
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type = "submit" value="Modificar" />
+    </form>
+    <p>
+        <button style="color:black">
+            <a style="color: black;" href = "{% url 'CursoList' %}">Regresar</a>
+
+        </button>
+    </p>
+
+{% endblock %}
+
+{% block x %} Portal de cursos {% endblock %}

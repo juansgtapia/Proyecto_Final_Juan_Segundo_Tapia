@@ -1,0 +1,28 @@
+{% extends "CoderApp/main.html" %}
+
+{% block title %}
+Portal de busqueda  
+{% endblock %}
+
+{% block content %}
+
+<body style="color: white">Acá podras buscar los cursos disponibles en la universidad</body>
+
+<p>
+    <form action = "" method = "GET">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type = "submit" value ="Buscar">
+    </form>
+</p>
+<ul>
+    {% for curso in cursos %}
+        <li style="color:wheat"> <i>{{curso.nombre_de_la_materia}}, {{curso.año}} </i></li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+
+
+{% block x %} Busqueda de cursos {% endblock %}

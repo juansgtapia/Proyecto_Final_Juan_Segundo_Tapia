@@ -1,0 +1,22 @@
+{% extends "CoderApp/main.html" %}
+
+{% block title %}
+Postear en el blog 
+{% endblock %}
+
+{% block content %}
+
+<h3 style="color: antiquewhite;"> <i>Postear</i></h3>
+<form method="POST" enctype="multipart/form-data" style="color: antiquewhite;" >
+
+    {% csrf_token %}
+    {{ formulario.as_p}}
+
+    <input type="submit" value="Postear">
+
+
+</form>
+
+{% endblock %}
+
+{% block x %} Portal de estudiantes {% endblock %}

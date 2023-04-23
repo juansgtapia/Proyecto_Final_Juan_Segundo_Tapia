@@ -1,0 +1,42 @@
+{% extends "CoderApp/main.html" %}
+
+{% block title %}
+Portal de cursos 
+{% endblock %}
+
+{% block content %}
+
+<body style="color: white;">Acá encontraras el listado de cursos dictados por la universidad</body>
+    <h3 style="color: white"> Lista de cursos </h1>
+    <ul style="color:beige">
+        {% for catedra in object_list %}
+            <li>
+                <p style="color: white;">Materia: <i style="color: bisque;">{{ catedra.nombre_de_la_materia }} </i></p>
+                <p style="color: white;">Año: <i style="color:bisque">{{ catedra.año}}</i></p>
+                <p>
+                    <a style="color:khaki" href = "{% url 'CursoDetail' catedra.id %}">Ver</a>
+                    <a style="color:khaki" href = "{% url 'CursoEdit' catedra.id %}">Editar</a>
+                    <a style="color:khaki" href = "{% url 'CursoDelete' catedra.id %}">Borrar</a>
+                </p>
+            </li>
+
+        {% endfor %}
+
+
+    </ul>
+    <p>
+        <button style="color: black;">
+            <a style="color:black;" href = "{% url 'cursos' %}">Añadir curso</a>
+        </button>
+    </p>
+    <p>
+        <button style="color: black;">
+            <a style="color:black;" href = "{% url 'buscarcurso' %}">Buscar curso</a>
+        </button>
+    </p>
+
+
+
+{% endblock %}
+
+{% block x %} Portal de cursos {% endblock %}

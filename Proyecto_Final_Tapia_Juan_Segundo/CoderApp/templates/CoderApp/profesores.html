@@ -1,0 +1,26 @@
+{% extends "CoderApp/main.html" %}
+
+
+{% block title %}
+Añadir profesores
+{% endblock %}
+
+{% block content %}
+<body style="color: beige;"> Aquí podrás añadir profesores a la base de datos </body>
+
+<h2 style="color:white">Añadir</h2>
+
+{% include "CoderApp/forms.html" %}
+
+
+<p>
+    <button style="color:black">
+        <a style="color: black;" href = "{% url 'LeerProfesores' %}">Regresar</a>
+    </button>
+</p>
+
+
+{% endblock %}
+
+
+{% block x %} Añadir profesores {% endblock %}

@@ -1,0 +1,11 @@
+
+<div class=>
+    <form action="" method="POST" class="formclass">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <input type="submit" value="Añadir">
+    </form>
+</div>
+<style>
+    .formclass { color:white;}
+</style>

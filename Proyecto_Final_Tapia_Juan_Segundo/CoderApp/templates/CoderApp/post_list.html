@@ -1,0 +1,26 @@
+{% extends "CoderApp/main.html" %}
+
+
+{% block title %}
+Posteos
+{% endblock %}
+
+{% block content %}
+<ul>
+{% for post in post %}
+
+<li>
+    {{ post }}
+</li>
+
+{% endfor %}
+
+
+</ul>
+
+
+
+{% endblock %}
+
+
+{% block x %} Añadir profesores {% endblock %}

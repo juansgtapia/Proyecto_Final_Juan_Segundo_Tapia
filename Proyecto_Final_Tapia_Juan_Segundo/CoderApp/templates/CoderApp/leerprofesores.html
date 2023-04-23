@@ -1,0 +1,34 @@
+{% extends "CoderApp/main.html" %}
+
+
+{% block title %}
+Portal de profesores 
+{% endblock %}
+
+{% block content %}
+
+<body style="color: white">Acá encontraras información sobre nuestros profesores</body>
+
+<h3>Lista de profesores</h3>
+
+<ul>
+    {% for profesor in profesores %}
+        <li>
+            <p>Nombre: <i style="color: wheat;">{{ profesor.nombre }} </i></p>
+            <p>Email: <i style="color: wheat;">{{ profesor.email }} </i></p>
+            <p>
+                <a style="color:khaki" href = "{% url 'EliminarProfesor' profesor.nombre %}">Eliminar</a>
+                <a style="color:khaki" href = "{% url 'EditarProfesor' profesor.nombre %}">Editar</a>
+            </p>
+        </li>
+    {% endfor %}
+    <p>
+        <button style="color: black;">
+            <a style="color:black;" href = "{% url 'profesores' %}">Añadir profesor</a>
+        </button>
+    </p>
+</ul>
+{% endblock %}
+
+
+{% block x %} Portal de profesores {% endblock %}

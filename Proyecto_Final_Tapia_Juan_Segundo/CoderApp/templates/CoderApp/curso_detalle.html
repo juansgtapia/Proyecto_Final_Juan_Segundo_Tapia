@@ -1,0 +1,21 @@
+{% extends "CoderApp/main.html" %}
+
+{% block title %}
+Portal de cursos 
+{% endblock %}
+
+{% block content %}
+    <h3 style="color: white;"> Información del curso </h3>
+    <p style="color: white;">Materia: <i style="color: wheat;">{{ catedra.nombre_de_la_materia }}</i></p>
+    <p style="color: white;">Año: <i style="color: wheat;"> {{ catedra.año}}</i></p>
+    <p>
+        <button style="color:black">
+            <a style="color: black;" href = "{% url 'CursoList' %}">Regresar</a>
+
+        </button>
+    </p>
+    
+{% endblock %}
+
+{% block x %} Portal de cursos {% endblock %}
+

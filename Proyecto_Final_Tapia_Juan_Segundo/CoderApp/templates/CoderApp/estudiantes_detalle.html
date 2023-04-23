@@ -1,0 +1,21 @@
+{% extends "CoderApp/main.html" %}
+
+{% block title %}
+Editar información de estudiante 
+{% endblock %}
+
+{% block content %}
+    <h2 style="color: white;"> Detalle </h2>
+    <p style="color: white;">Nombre: <i style="color: wheat;">{{ estudiante.nombre }}</i></p>
+    <p style="color: white;">Apellido: <i style="color: wheat;"> {{ estudiante.apellido}}</i></p>
+    <p style="color: white;">Email: <i style="color: wheat;">{{ estudiante.email }}</i> </p>
+    <p style="color: white;">Calificación: <i style="color: wheat;">{{ estudiante.calificacion}}</i></p>
+    <p>
+        <button style="color:black">
+            <a style="color: black;" href = "{% url 'List' %}">Regresar</a>
+        </button>
+    </p>
+    
+{% endblock %}
+
+{% block x %} Información del estudiante {% endblock %}

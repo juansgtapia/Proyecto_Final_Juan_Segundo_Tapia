@@ -1,0 +1,33 @@
+{% extends "CoderApp/main.html" %}
+
+{% block title %}
+Portal de profesores 
+{% endblock %}
+
+{% block content %}
+
+<body style="color: wheat;"> Acá podrás editar la información de los profesores en la base de datos</body>
+
+<h2 style="color: white;">Editar informacion de Profesor</h2>
+
+{% if formulario.errors %}
+
+<p style="color:red"> Estan mal los datos, revisar</p>
+{% endif %}
+
+<form action="" method="POST" style="color: white;" >{% csrf_token %}
+    <table>
+        {{ formulario.as_table }}
+    </table>
+    <input type="submit", value="Modificar">
+</form>
+
+
+<p>
+    <button style="color:black">
+        <a style="color: black;" href = "{% url 'LeerProfesores' %}">Regresar</a>
+    </button>
+</p>
+{% endblock %}
+
+{% block x %} Portal de profesores {% endblock %}

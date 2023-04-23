@@ -1,0 +1,25 @@
+{% extends "CoderApp/main.html" %}
+
+
+{% block title %}
+Portal de busqueda de estudiantes 
+{% endblock %}
+
+{% block content %}
+
+<form action = "" method = "GET">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type = "submit" value ="Buscar">
+</form>
+
+<h3>Listado de estudiantes</h3>
+<ul>
+    {% for estudiante in estudiantes %}
+        <li>{{ estudiante }}</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
+
+{% block x %} Portal busqueda de cursos {% endblock %}

@@ -1,0 +1,20 @@
+<nav class="navbar navbar-light bg-light static-top">
+    <div class="container">
+        <a class="navbar-brand" href="{% url 'Inicio' %}">Inicio</a>
+        <a class="navbar-brand" href="{% url 'CursoList' %}">Cursos</a>
+        <a class="navbar-brand" href="{% url 'LeerProfesores' %}">Profesores</a>
+        <a class="navbar-brand" href="{% url 'List' %}">Estudiantes</a>
+        {% if not request.user.is_authenticated %}
+        <a class="btn btn-primary" href="{% url 'Login' %}">Iniciar</a>
+        {% endif %}
+        {% if request.user.is_authenticated %}
+        <div class="text-center">
+            <a href= "{% url 'perfil' request.user.id %}">
+            <img height ="40px" src="{{request.session.userimage}}">
+            </a>
+            <p style="color:black">Bienvenido, {{user.username}}</p>
+        </div>
+        <a class="navbar-brand" href="{% url 'Logout' %}"><h9>Cerrar sesión</h9></a>
+        {% endif %}        
+    </div>
+</nav>

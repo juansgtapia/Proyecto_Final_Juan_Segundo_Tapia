@@ -1,0 +1,19 @@
+{% extends "CoderApp/main.html" %}
+
+
+{% block title %}
+inicio
+{% endblock %}
+
+{% block content %}
+
+<body style="color: wheat;"> Bienvenido al portal universitario, en este sitio web podrás buscar información acerca de los cursos ofrecidos por la universidad, así como información sobre los profesores y estudiantes.</body>
+
+
+{% if mensaje %}
+
+{{mensaje}}
+
+{% endif %}
+
+{% endblock %}
